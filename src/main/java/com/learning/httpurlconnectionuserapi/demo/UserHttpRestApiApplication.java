@@ -13,9 +13,6 @@ public class UserHttpRestApiApplication {
     private static final int PORT = 8080;
 
     public static void main(String[] args) throws IOException {
-        Greeter greeter = new Greeter();
-        System.out.println(greeter.sayHello());
-
         HttpServer server = HttpServer.create(new InetSocketAddress(PORT), 0);
         server.createContext("/api/users", new UserController());
         server.setExecutor(null);
